@@ -1,4 +1,4 @@
-# p5 jegyzet (METU 2017 tavaszi félév)
+# p5 jegyzet (MOME 2017 tavaszi félév)
 
 ## FIGYELEM
 
@@ -11,7 +11,7 @@ A kurzus célja a [p5.js](p5js.org) alapjainak elsajátítása. A p5.js a [Proce
 Órák helye és időpontja: TBD  
 Megengedett hiányzások száma: TBD (katalógus lesz)  
 
-A kurzus oktatói: Endrey Marcell, Biró Júlia és Kovács Eszter.  
+A kurzus oktatói: Endrey Marcell, Kovács Eszter és Biró Júlia.  
 
 A szemeszter utolsó előtti óráján mindenkinek írnia kell egy képernyőkímélőt, az utolsón pedig egy játékot. A félév végi jegy ezeknek a programoknak, illetve a félév végi munkának (órai munka és esetleges házi feladatok) az értékeléséből születik. 
 
