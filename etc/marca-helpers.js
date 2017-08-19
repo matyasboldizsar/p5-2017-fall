@@ -2,16 +2,21 @@
 
 corsProxy = "https://cors-anywhere.herokuapp.com/"
 
-function loadsound(url) {
+function preloadSound(url) {
   return loadSound(corsProxy + url)
 }
 
-function loadimage(url) {
+function preloadImage(url) {
   return loadImage(corsProxy + url)
 }
 
 
-// easier syntax for some p5 functions
+// easier syntax for some p5 functionality
+
+NORTH = 0
+EAST = 90
+SOUTH = 180
+WEST = 270
 
 function circle(x, y, d) {
   ellipse(x, y, d, d)
@@ -35,22 +40,17 @@ function stopSound(sound) {
   sound.stop()
 }
 
+function paintCanvas(c) {
+  var _ = background(c)
+}
+
+pick = random   // use random with intervals and pick for arrays to avoid the topic of overloading
+
 
 // general helper functions
 
 function roundTo(num, to) {
     return to * round(num / to)
-}
-
-function shift(group) {
-    if (group.length < 1) {
-        return
-    }
-    last = group[group.length - 1]
-    for (i = group.length - 1; i > 0; i -= 1) {
-        group[i] = group[i - 1]
-    }
-    group[0] = last
 }
 
 function repulsionPoint(sprite, magnitude, pointX, pointY) {
@@ -60,7 +60,7 @@ function repulsionPoint(sprite, magnitude, pointX, pointY) {
 }
 
 
-// helpers for cyclic movements
+// misc
 
 function pulse(from, to, speed) {
   if (typeof speed === "undefined") {
@@ -70,28 +70,6 @@ function pulse(from, to, speed) {
   var amplitude = Math.abs(from - to) / 2
   var direction = to > from ? 1 : -1
   return middle + direction * amplitude * sin(frameCount / 50 * speed)
-}
-
-function oneway(from, to, speed) {
-  if (typeof speed === "undefined") {
-    speed = 1
-  }
-  var distance = Math.abs(from - to)
-  var direction = to > from ? 1 : -1
-  return from + direction * (frameCount * speed) % distance
-}
-
-function twoway(from, to, speed) {
-  if (typeof speed === "undefined") {
-    speed = 1
-  }
-  var distance = Math.abs(from - to)
-  var full = (frameCount * speed) % (distance * 2)
-  if (full > distance) {
-    full = 2 * distance - full
-  }
-  var direction = to > from ? 1 : -1
-  return from + direction * full
 }
 
 
