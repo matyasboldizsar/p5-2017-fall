@@ -1,4 +1,4 @@
-# Első óra: a programozás alapfogalmai
+# Első óra: a programozás alapfogalmai (jegyzet)
 
 Játszótér: http://jsbin.com/zobexeb/edit?console,output  
 Használat közben a Console és az Output ablak legyen megnyitva, futtatáshoz "Run with JS" gomb.  
@@ -6,7 +6,7 @@ Használat közben a Console és az Output ablak legyen megnyitva, futtatáshoz 
 ## Függvények, változók, objektumok 9 lépésben
 
 ### 1. Függvények
-A programnak úgy lehet parancsot adni, hogy meghívjuk a program függvényeit. A "Játszótér" program `greet()` függvényét úgy tudjuk meghívni, hogy a konzolon (parancssoron) begépeljük a függvény nevét és mögé a nyitó-záró zárójeleket, majd Entert nyomunk. A program ekkor üdvözöl minket.  
+A programnak úgy lehet parancsot adni, hogy "meghívjuk" a program függvényeit. A "Játszótér" program `greet()` függvényét úgy tudjuk meghívni, hogy a konzolon (parancssoron) begépeljük a függvény nevét és mögé a nyitó-záró zárójeleket, majd Entert nyomunk. A program ekkor üdvözöl minket. 
 Ha meg akarjuk ismételni a parancsot, nem kell újra begépelnünk: a konzolban a felfele billentyűvel be tudjuk tölteni a korábbi utasításokat.  
 Kipróbálandó függvények:  
 `greet()`  
@@ -30,12 +30,15 @@ Kipróbálandó függvények:
 #### 2. Változók
 A programban úgy lehet adatokat eltárolni, hogy változóba mentjük őket. A változó egy névből és egy értékből áll, pl. a "Játszótér" programban a `customers` nevű változó tárolja azt a számot, ahányan ma kávét vettek a kávézóban. (A program azt is feltünteti, hogy a változó `number` típusú, mert most éppen egy számot tárol.) A változó értékét bármikor módosíthatjuk. Például így lehet a vásárlók számát 12-re állítani:  
 `customers = 12`  
-Figyelem: az egyenlőségjel itt nem egyenlőséget, hanem értékadást jelöl. A `customers` értéke eddig akármi is volt, mostantól 12 lesz. Az egyenlőségjel helyére képzelhetünk egy balra mutató nyilat (`customers <-- 12`), hogy még látványosabb legyen: az egyenlőségjel fogja a jobb oldalán található értéket, és belerakja a bal oldalon álló változóba. Tehát például a `12 = customers` utasítás, bármilyen hasonló is az előzőhöz, valójában értelmetlen, és hibát dob.  
+Figyelem: az egyenlőségjel itt nem egyenlőséget, hanem értékadást jelöl. A `customers` értéke eddig akármi is volt, mostantól 12 lesz. Az egyenlőségjel helyére képzelhetünk egy balra mutató nyilat (`customers <== 12`), hogy még látványosabb legyen: az egyenlőségjel fogja a jobb oldalán található értéket, és belerakja a bal oldalon álló változóba. Tehát például a `12 = customers` utasítás, bármilyen hasonló is az előzőhöz, valójában értelmetlen, és hibát dob.  
 A programunkban a (szám típusú) `stars` és a (string típusú) `company` változók változatásakor rögtön változik a látható végeredmény is. Így tudjuk például a csillagok számát kettőre állítani:  
 `stars = 2`  
 vagy a kávózó nevét Carlos Caféra:  
 `company = "Carlos Café"`  
 Figyelem: a cég neve egy string, tehát itt is ki kell tennünk az idézőjeleket.  
+
+Szám típusú változók értékét könnyen tudjuk növelni vagy csökkenteni a `+=`, illetve `-=` operátorokkal: például ha a `stars` változó értéke jelenleg 2, akkor a `stars += 3` utasítás után már 5 lesz.  
+Figyelem: a `stars + 3` szintén azt írná ki a konzolra, hogy 5, de ez csak az elvégzett számolás eredménye (`stars` meg három az kettő meg három, vagyis öt), a változót magát nem módosítja!  
 
 Új változót ugyanúgy tudunk létrehozni, ahogy a meglévőeket módosítottuk, például ha el akarjuk menteni, hogy a mai vásárlók közül összesen hárman kértek pitét is a kávéjuk mellé, létrehozhatunk egy `pie` nevű változót, amibe beletesszük a hármas számot:  
 `pie = 3`  
@@ -46,6 +49,17 @@ Változók értékének megadásakor nem csak konkrét értékeket (pl. 3 vagy "
 Jusson eszünkbe, hogy az egyenlőségjel jobbról balra ad értéket, tehát a fenti parancstól a `stars` értéke megváltozik, a `customers` értéke nem.  
 
 Ha nem értéket adni szeretnénk, hanem összehasonlítani két változót, azt dupla egyenlőségjellel tudjuk megtenni: a `stars == customers` parancs egyik változó értékét sem módosítja, csak megmondja, hogy megegyeznek-e.  
+
+#### Összefoglalás a műveleti jelekről
+
+| Operátor | Jelentés            | Példa       | Output   | Változás                          |
+|----------|---------------------|-------------|----------|-----------------------------------|
+| =        | legyen egyenlő      | `eyes = 2`  | `2`      | az `eyes` változó értéke 2 lesz   |
+| ==       | egyenlő?            | `eyes == 2` | `true`   | nincs változás                    |
+| +        | összeadás           | `eyes + 1`  | `3`      | nincs változás, az `eyes` marad 2 |
+| +=       | változó megnövelése | `eyes += 1` | `3`      | az `eyes` értéke mostantól 3      |
+| -        | kivonás             | `eyes - 3`  | `0`      | nincs változás, az `eyes` marad 3 |
+| -=       | változó csökkentése | `eyes -= 3` | `0`      | az `eyes` értéke mostantól 0      |
 
 #### 3. Változó mint függvényargumentum
 Azok a függvények, amik argumentumot várnak, konkrét érték helyett elfogadnak változót is: pl. a `nyan(5)` parancs pontosan 5 macskát hoz létre, a `nyan(stars)` parancs viszont pontosan annyit, ahány csillagunk épp van (tehát ami épp a `stars` változó értéke). Ha pedig a kávézó nevét akarjuk felugró ablakban megjeleníteni: `alert(company)`  
@@ -73,7 +87,7 @@ Azok a függvények, amik argumentumot várnak, nyugodtan megkaphajták bob vál
 `alert(bob.color)`  
 `nyan(bob.wheels)`  
 
-Illetve bobnak azok a függvényei, amik argumentumot várnak, szintén kaphatnak változó bemenetül:  
+Illetve bobnak azok a függvényei, amik argumentumot várnak, szintén kaphatnak változót bemenetül:  
 `bob.blink(stars)`  
 `bob.say(company)`  
 `balls(bob.color, bob.wheels)`  

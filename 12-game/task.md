@@ -1,7 +1,5 @@
 # Tizedik óra: saját játék
 
-Visszajelzés: https://goo.gl/forms/oc8y9pZ6hOG5Nwoj2
-
 ## Hogyan tovább?
 
 ### Processing, p5, p5.play

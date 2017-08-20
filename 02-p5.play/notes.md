@@ -7,18 +7,17 @@ Minden pont helyét két számmal tudjuk meghatározni. Az első szám azt mutat
 A második szám azt mutatja, milyen messze van a pont függőlegesen a képernyő tetejétől - ez az úgynevezett y koordináta. A vászon tetején tehát 0 az y koordináta, lefelé haladva pedig egyre nő. Mindkét koordináta mértékegysége a pixel (képpont), a sorrendjük pedig nem felcserélhető: mindig az x (vízszintes) koordináta az első és az y (függőleges) a második.  
 Az irány leírásához egyetlen szám kell, ez pedig egy szöget jelöl fokban számítva, 0 és 360 között. p5-ben a keleti irány számít 0-nak, a forgás pedig az óramutató járásával megegyező irányban történik: a déli irány 90 fok, a nyugati 180, az északi pedig 270.  
 
-Az alábbi program prezentálja a koordinátákat és a szögeket: http://jsbin.com/faginuv/quiet  
+Az alábbi program prezentálja a koordinátákat és a szögeket: http://jsbin.com/medolor/  
 (A két mód közötti váltással az egérhez kell kattintani.)  
 
 ### p5 változók
 
 Programok írásakor változókat szoktunk definiálni. Vannak azonban a p5-ben olyan beépített változók, amiket nem nekünk kell létrehozni, a p5 automatikusan odaadja nekünk, mi pedig nem módosítjuk az értéküket, csak megnézzük és felhasználjuk. Például a `width` nevű változó tárolja a jelenlegi vásznunk szélességét, a `height` pedig a magasságát. (Érdemes megjegyezni: mikor valamit a képernyő közepére akarunk rajzolni, gyakran fogjuk a `width / 2, height / 2` koordinátapárt használni.)  
 A p5 az egér mindenkori aktuális helyzetét a `mouseX`, illetve `mouseY` nevű változókban bocsátja rendelkezésünkre.  
+
+A koordinátákon kívül a szögekhez is segítségünkre van néhány változó: hogy ne kelljen mindig számolgatnunk, a négy égtájnak megfelelő négy fő irányt a neve leírásával is elérhetjük. Tehát ha az északi irányt szeretnénk megadni, nem kell emlékeznünk arra, hogy ennek a szöge a 0, elég beírnünk, hogy `NORTH`; keletre 90 helyett írhatunk `EAST`-et és így tovább.  
+
 A fent linkelt, vonalzós-szögmérős program futás közben jól láthatóan használja ezeket a változókat.  
-
-### Torpedó
-
-Játék a koordinátarendszer és a szögek gyakorlására: http://jsbin.com/vimorol/quiet (órai, rövidített verzió)  
 
 ## Sprite-ok (szereplők)
 
@@ -32,51 +31,9 @@ Első lépésben például állítsuk át bob színét: `bob.shapeColor = "choco
 
 Ha már nincs szükségünk bobra, tüntessük el: `bob.remove()`  
 
-### Speed
-
-Ha bobot mozgatni szeretnénk, tudunk neki sebességet adni a `setSpeed()` függvény segítségével. Ez a függvény két számot vár: a sebesség nagyságát (mennyire gyorsan mozogjon bob) és az irányát (melyik irányba tegye mindezt). Az irányt a fent ismertetett módon, fokban kell megadni. A parancs legegyszerűbb formája: `bob.setSpeed(1, 0)`  
-Ennek hatására bob lassan elindul kelet felé. A `setSpeed()` olyan parancs, amit elég egyszer kiadni, utána a sprite mindaddig mozgásban marad, amíg új utasítást nem kap.  
-Ha szeretnénk megállítani bobot: `bob.setSpeed(0, 0)` - zéró sebességet kell megadnunk.  
-Megjegyzés: ha például a `bob.setSpeed(5, 45)` paranccsal átlósan jobbra-lefelé indítjuk el a sprite-unkat, kiderül, hogy valóban egy 100*100 pixel méretű négyzetről van szó, melynek azonban a `createSprite()` parancs után csak a jobb alsó negyedét látjuk. Ez azért van, mert a `createSprite()` függvény alapértelmezésben a (0, 0) pontban, tehát a képernyő bal felső sarkában hozza létre a sprite-ot, úgy, hogy annak pont a középpontja van (0, 0)-ban - tehát a nagyobbik része kilóg a vászonról.  
-Megjegyzés: attól, hogy valami nincs a vásznon, nem szűnik meg létezni, csak éppen nem látszik. Ha tehát bob egy `setSpeed()` utasítás utána kigyalogol a vászonról, nem vesztettük el - egy ellentétes irányú `setSpeed()` és némi várakozás után vissza fog térni.  
-
-Ha nem szeretnénk, hogy a sprite a `setSpeed()` után örökké mozogjon (de legalábbis addig, amíg mást nem mondunk neki), állíthatunk bob "csúszósságán". Ezt a sprite `friction` nevű változója alatt érjük el, mely "súrlódást" jelent, valójában azonban inkább azt jelöli, mennyire csúszik a sprite a vásznon. A `friction` alapértelmezett értéke 1 - ez azt jelenti, hogy ha sebességet adunk neki, akkor azt állandóan, fixen tartani fogja. Ha azonban kisebbre állítjuk a "csúszósságot":  
-`bob.friction = 0.95`  
-Akkor egy `setSpeed()` utasítás után bob hamar veszít a sebességéből, és meg is áll.  
-(Ha pedig a `friction`-t egynél nagyobb számra állítjuk, bob - a fizika törvényeivel ellenkezve - csúszás során egyre gyorsabb lesz. Ezt a gyakorlatban nem fogjuk használni.)  
-Megjegyzés: figyeljük meg, hogy a tört szám leírása során nem tizedesvesszőt, hanem pontot használunk.  
-
-A `setSpeed()` utasítás kiadásakor a sprite elfelejti az addigi sebességét, és csak az újonnan megadott irányba és sebességgel fog mozogni. Létezik azonban egy másik függény, melynek neve `addSpeed()`. Ez az előzőhöz hasonlóan működik, amennyiben ugyanúgy két számot vár a sebesség nagyságára és szögre vonatkozóan, viszont a `setSpeed()`-del ellentétben nem veszi el a sprite addigi sebességét, hanem hozzáadódik.  
-Példa:  
-`bob.setSpeed(10, 0)`  
-`bob.setSpeed(2, 0)`  
-A második parancs kiadása után bob 2-es sebességgel halad kelet felé, mert a második `setSpeed()` felülírta az elsőt.  
-Ezzel szemben:  
-`bob.setSpeed(10, 0)`  
-`bob.addSpeed(2, 0)`  
-A második parancs kiadása után bob 12-es sebességgel halad kelet felé, mert a második parancsban meghatározott sebesség hozzáadódott az elsőhöz.  
-És sebességet persze nem csak azonos irányban tudunk megadni:  
-`bob.setSpeed(3, 0)`  
-`bob.addSpeed(3, 90)`  
-A fenti két parancs után a sprite 3-mal fog mozogni jobbra, és 3-mal fog mozogni lefelé is - összességében véve tehát átlósan halad jobbra-lefelé.
-
-### Rotation
-
-A sprite nem csak mozogni, forogni is tud. Az aktuális forgásirányát a `rotation` változójában érjük el:  
-`bob.rotation`  
-Kiírja, épp merre áll bob; alapértelmezésben 0.  
-`bob.rotation = 10`  
-Elforgatja bobot 10 fokkal.
-
-A sprite folyamatosan is tud forogni, ehhez a `rotationSpeed` változóját kell beállítani:  
-`bob.rotationSpeed = 1`  
-bob elkezd forogni az óramutató járásával megegyező irányba.  
-`bob.rotationSpeed = -1`  
-bob elkezd forogni az óramutató járásával ellenkező irányba.  
-
 ### Position
 
-A sprite aktuális helyzetét a vásznon a `position.x` és `y` változóival érjük el:  
+A sprite aktuális helyzetét a vásznon a `position.x` és `position.y` változóival érjük el:  
 `bob.position.x`  
 `bob.position.y`  
 
@@ -84,16 +41,38 @@ Ezeket a változókat be is állíthatjuk tetszőlegesen:
 `bob.position.x = 100`  
 `bob.position.y = 200`  
 
+Ha bobot a rendelkezésünkre álló vászonhoz képest szeretnénk pozícionálni, a `width` és a `height` változókat is felhasználjuk:  
+`bob.position.x = width / 2`  
+`bob.position.y = height / 2`  
+Ez a két parancs vízszintesen és függőlegesen is középre igazítja bobot.  
+
 Ha egy változó értékét nem konkrét számra akarjuk állítani, hanem a jelenlegi értékéhez képest megnövelni vagy lecsökkenteni, a `=` helyett a `+=` illetve `-=` operátorokat használjuk.  
 Például:  
-`bob.position.x = width / 2`  
 `bob.position.x += 100`  
-Az első parancs bobot a képernyő szélességének a feléhez állítja vízszintesen, a második pedig ehhez képest még száz képponttal jobbra tolja.
+`bob.position.y -= 200`
+Az első parancs bobot száz képponttal jobbra tolja a jelenlegi helyzetéhez képest, a második kétszáz képponttal felfele.
+
+### Méret
+bob méretét is le tudjuk kérni, illetve be tudjuk állítani:  
+`bob.width` kiríja bob jelenlegi szélességét,  
+`bob.height = 200` átállítja bob magasságát 200-ra.  
+
+### Rotation
+
+A sprite nem csak mozogni, forogni is tud. Az aktuális forgásirányát a `rotation` változójában érjük el:  
+`bob.rotation`  
+Ez a parancs kiírja, épp merre áll bob; ez alapértelmezésben 0.  
+
+bob forgását be tudják állítani egy-egy konkrét értékre, például:  
+`bob.rotation = 10`  
+
+Illetve módosítani tudjuk a jelenlegi értékéhez képest:  
+`bob.rotation += 10`  
+`bob.rotation -= 5`  
 
 ### Random
 
 Az első órán megismert `random()` függvény a továbbiakban is használható. A `random()` két számot vár, egy alsó és egy felső határt, és egy véletlenszámot ad vissza a két határ között. Például ha bob irányát véletlenszerűre akarjuk állítani, a 0 és a 360 közötti véletlenszámra lesz szükségünk: `bob.rotation = random(0, 360)`  
-Vagy elindíthatjuk bobot véletlenszerű irányba: `bob.setSpeed(2, random(0, 360))`  
 
 bob helyét is állíthatjuk véletlenre. Itt az alsó határ 0, a felső pedig az x koordinátánál a vászon szélessége, tehát `width`, az y-nál `height`:  
 `bob.position.x = random(0, width)`  
@@ -103,7 +82,7 @@ Megjegyzés: a globálisan létező `width` nem keverendő össze a sprite sajá
 
 ### Sprite létrehozása konkrét helyen, konkrét méretben
 
-Azt mondtuk, a sprite automatikusan a vászon bal felső sarkában, 100\*100-as méretben jön létre. Valójában azonban ezeket az adatokat meg tudjuk határozni lérehozáskor: ha átadunk a `createSprite()` parancsnak négy számot, abból az elsőt a sprite x koordinátájaként, a másodikat y-ként, a harmadikat szélességként, a negyediket magasságként fogja értelmezni.  
+A `createSprite()` függvény hatására a sprite automatikusan a vászon bal felső sarkában, 100\*100-as méretben jön létre. Valójában azonban ezeket az adatokat meg tudjuk határozni lérehozáskor: ha átadunk a `createSprite()` parancsnak négy számot, abból az elsőt a sprite x koordinátájaként, a másodikat y-ként, a harmadikat szélességként, a negyediket magasságként fogja értelmezni.  
 Csináljunk mondjuk egy sprite-ot a vászon (300, 50) pontjában, 20*20-as méretben:  
 `alice = createSprite(300, 50, 20, 20)`  
 Vagy hozzunk létre egy lapos sprite-ot pont a vászon közepén:  
@@ -121,8 +100,4 @@ Ugyanezt a parancsot írhattuk volna így is:
 Vagy mondjuk így:  
 `charlie =createSprite(  width/2,height /2,500,10)`  
 Amíg a parancs egyértelmű, a számítógépet nem érdekli, hova teszünk szóközt. Az emberi olvasó számára azonban fontos, hogy a program egységesen és jól olvashatóan legyen megírva. Ezért a kurzus során tartjuk magunkat ahhoz az egységes stílushoz, ami a jegyzetekben szerepel. Ennek pár jellemzője: a matematikai műveletek mindkét oldalán szóköz áll; a zárójeleknek egyik oldalán sincs szóköz; a vessző előtt nincs szóköz, utána viszont van.  
-
-## Házi feladat
-
-A házi feladat az órán megismert torpedós játék hosszabb, kicsit nehezebb és időeredményt is mérő változatának végigjátszása, amit a végeredményről készült screenshottal kell bizonyítani. A screenshotokat a facebook-csoportba kell küldeni.  
-Torpedó: http://jsbin.com/qiferir/quiet (teljes, házi feladat)  
+Amennyiben nem Safariban dolgozunk, használhatjuk a Cmd+Shift+L (windowson Ctrl+Shift+L) billentyűkombinációt arra, hogy a JSBin automatikusan megformázza a kódot.  

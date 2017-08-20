@@ -41,10 +41,14 @@ function stopSound(sound) {
 }
 
 function paintCanvas(c) {
+  // suppress console output
   var _ = background(c)
 }
 
-pick = random   // use random with intervals and pick for arrays to avoid the topic of overloading
+function pick(arr) {
+  // use random with intervals and pick for arrays to avoid the topic of overloading
+  return random(arr)
+}
 
 
 // general helper functions

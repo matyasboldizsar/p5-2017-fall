@@ -3,6 +3,6 @@ function setup() {
 }
 
 function draw() {
-    background("white")
-	drawSprites()
+    paintCanvas("white")
+	allSprites.draw()
 }
