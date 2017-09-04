@@ -10,7 +10,8 @@ __Ez a jegyzet félkész állapotban van, egyelőre nem mérvadó.__
 A kurzus célja a [p5.js](p5js.org) alapjainak elsajátítása. A p5.js a [Processing](processing.org) programozási környezet [JavaScript](https://en.wikipedia.org/wiki/JavaScript) alapú változata. A félév során a p5.js-hez készült [p5.play](http://p5play.molleindustria.org/) kiegészítőt is fogjuk használni.  
 
 ### Órák
-Órák helye és időpontja: TBD  
+Órák helye és időpontja: szerda 8:30-9:50, terem: TBD  
+(12 óra lesz szept. 13. és dec. 6. között)  
 Megengedett hiányzások száma: TBD (katalógus lesz)  
 Oktatók: Endrey Marcell, Kovács Eszter és Biró Júlia  
 
