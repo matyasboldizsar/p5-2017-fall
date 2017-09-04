@@ -33,3 +33,45 @@ Facebook-csoport: TBD
 | &        | alt + 1         | \|       | alt + í         |
 | *        | alt + shift + , | ;        | alt + .         |
 
+---
+
+## Jegyzetek, tematika
+
+#### 1. A programozás alapfogalmai
+- [vázlat](https://github.com/endreymarcell/p5-2017-fall/blob/master/01-basics/bullet-points.md)  
+- [jegyzet](https://github.com/endreymarcell/p5-2017-fall/blob/master/01-basics/notes.md)
+
+#### 2. p5.play alapok
+- [vázlat](https://github.com/endreymarcell/p5-2017-fall/blob/master/02-p5.play/bullet-points.md)  
+- [jegyzet](https://github.com/endreymarcell/p5-2017-fall/blob/master/02-p5.play/notes.md)
+
+#### 3. p5 modell
+- [vázlat](https://github.com/endreymarcell/p5-2017-fall/blob/master/03-p5-model/bullet-points.md)
+
+#### 4. grafika
+- [vázlat](https://github.com/endreymarcell/p5-2017-fall/blob/master/04-drawing/bullet-points.md)
+
+#### 5. színek, képek
+- [vázlat](https://github.com/endreymarcell/p5-2017-fall/blob/master/05-colors-images/bullet-points.md)
+
+#### 6. sprite extrák
+- [vázlat](https://github.com/endreymarcell/p5-2017-fall/blob/master/06-sprite-actions/bullet-points.md)
+
+#### 7. feltételek
+- [vázlat](https://github.com/endreymarcell/p5-2017-fall/blob/master/07-conditions/bullet-points.md)
+
+#### 8. irányítás billentyűkkel
+- [vázlat](https://github.com/endreymarcell/p5-2017-fall/blob/master/08-keyboard-TBD/bullet-points.md)
+
+#### 9. for ciklus
+- [vázlat](https://github.com/endreymarcell/p5-2017-fall/blob/master/09-for-loop/bullet-points.md)
+
+#### 10. csoportok, for ciklus csoportokon
+- [vázlat](https://github.com/endreymarcell/p5-2017-fall/blob/master/10-groups/bullet-points.md)
+
+#### 11. saját képernyőkímélő
+- [vázlat](https://github.com/endreymarcell/p5-2017-fall/blob/master/11-screen-saver/task.md)
+
+#### 12. saját játék
+- [vázlat](https://github.com/endreymarcell/p5-2017-fall/blob/master/12-game/task.md)  
+- extra: 🐍 [snake](https://github.com/endreymarcell/p5-2017-fall/blob/master/12-game/snake.md)
