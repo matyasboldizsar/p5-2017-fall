@@ -1,3 +1,3 @@
 # 8. irányítás billentyűkkel, TBD
 - irányítás billentyűkkel
-- TBD
+- TBD: placeholder akár arra, hogy csúszást behozzunk, akár arra, hogy beszúrjunk valamilyen témát
