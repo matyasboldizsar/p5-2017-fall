@@ -5,6 +5,8 @@
 Programokban a képernyőre (pontosabban a képernyőből épp rendelkezésünkre álló részre, a vászonra) rajzolt dolgok helyét és irányát koordinátákkal, illetve szögekkel tudjuk leírni.  
 Minden pont helyét két számmal tudjuk meghatározni. Az első szám azt mutatja, milyen messze van a pont vízszintesen a képernyő bal szélétől - ez az úgynevezett x koordináta. A vászon bal szélén tehát 0 az x koordináta, jobbra haladva pedig folyamatosan nő.  
 A második szám azt mutatja, milyen messze van a pont függőlegesen a képernyő tetejétől - ez az úgynevezett y koordináta. A vászon tetején tehát 0 az y koordináta, lefelé haladva pedig egyre nő. Mindkét koordináta mértékegysége a pixel (képpont), a sorrendjük pedig nem felcserélhető: mindig az x (vízszintes) koordináta az első és az y (függőleges) a második.  
+Ez a jelölés ismerős lehet például a Photoshopból, aminek a vonalzóját pixelre állítva ugyanezt az elrendezést kapjuk, [ld. a képet](ps-rulers.png).  
+
 Az irány leírásához egyetlen szám kell, ez pedig egy szöget jelöl fokban számítva, 0 és 360 között. p5-ben a keleti irány számít 0-nak, a forgás pedig az óramutató járásával megegyező irányban történik: a déli irány 90 fok, a nyugati 180, az északi pedig 270.  
 
 Az alábbi program prezentálja a koordinátákat és a szögeket: http://jsbin.com/medolor/  
@@ -25,6 +27,7 @@ Játszótér: http://jsbin.com/kadugev/edit?console,output
 
 A p5 (pontosabban annak kiegészítője, a p5.play) programozás során úgynevezett _sprite_-okat, mondhatni "szereplőket" fogunk létrehozni és irányítani.  
 Sprite-ot a következő paranccsal csinálunk: `bob = createSprite()`  
+(Pontosabban a `createSprite()` függvénnyel létrehozzuk a sprite-objektumot, amit aztán a `bob` nevű változóba mentünk el.)  
 A parancs hatására a vászon bal felső sarkában megjelenik egy kis négyzet. Ő bob. Innentől az ő függvényeit és változóit a `bob.` előtag leírásával érjük el, mint az első órai játszótéren az azonos nevű robot függvényeit és változóit.  
 Első lépésben például állítsuk át bob színét: `bob.shapeColor = "chocolate"`  
 (A felhasználható színek listája [itt található](https://www.w3schools.com/cssref/css_colors.asp), az oldalt könnyen megtalálhatjuk, ha rákeresünk google-n a "css colors" kifejezésre.)  
@@ -100,4 +103,3 @@ Ugyanezt a parancsot írhattuk volna így is:
 Vagy mondjuk így:  
 `charlie =createSprite(  width/2,height /2,500,10)`  
 Amíg a parancs egyértelmű, a számítógépet nem érdekli, hova teszünk szóközt. Az emberi olvasó számára azonban fontos, hogy a program egységesen és jól olvashatóan legyen megírva. Ezért a kurzus során tartjuk magunkat ahhoz az egységes stílushoz, ami a jegyzetekben szerepel. Ennek pár jellemzője: a matematikai műveletek mindkét oldalán szóköz áll; a zárójeleknek egyik oldalán sincs szóköz; a vessző előtt nincs szóköz, utána viszont van.  
-Amennyiben nem Safariban dolgozunk, használhatjuk a Cmd+Shift+L (windowson Ctrl+Shift+L) billentyűkombinációt arra, hogy a JSBin automatikusan megformázza a kódot.  

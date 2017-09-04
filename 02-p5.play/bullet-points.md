@@ -16,6 +16,7 @@
 	- négy fő irány: `NORTH`, `EAST`, `SOUTH`, `WEST`
 	- egér helye: `mouseX`, `mouseY`
 - sprite-ok
+	+ játszótér: http://jsbin.com/kadugev/edit?console,output  
 	- létrehozás: `bob = createSprite()`
 	- szín: `bob.shapeColor = "darkblue"`
 	- törlés: `bob.remove()`
@@ -25,3 +26,4 @@
 	- forgás: `bob.rotation`
 	- a fentiek állítása randommal
 	- teljes konstruktor
+- megjegyzés a stílusról
