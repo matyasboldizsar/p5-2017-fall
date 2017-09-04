@@ -1,14 +1,14 @@
 # 6. sprite extrák
 - képek hozzáadása sprite-okhoz
 - sprite mozgás
-	- setSpeed(), addSpeed()
+	- `setSpeed()`, `addSpeed()``
 		+ gravitáció
-	- friction()
+	- `friction`
 - sprite interakciók
-	- overlap()
-	- collide(), displace()
-	- weight, immovable
-	- bounce()
-	- restitution
-	- attractionPoint
+	- `overlap()``
+	- `collide()`, `displace()`
+	- `weight`, `immovable`
+	- `bounce()`
+	- `restitution`
+	- `attractionPoint()`
 - saját sprite-alak

@@ -1,9 +1,18 @@
-# p5 modell
+# Harmadik óra: a p5 modell (vázlat)
 
 - JSBin
-	+ fájlkezelés
 	+ fülek
-	+ megosztás
+		* HTML
+		* CSS
+		* JavaScript
+		* konzol
+		* output
+	+ fájlkezelés
+		* új bin
+		* autosave
+		* megnyitás
+		* megosztás
+		* klónozás
 - code editor
 	+ hightlight
 	+ autoclose

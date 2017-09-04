@@ -3,12 +3,17 @@
 Játszótér: http://jsbin.com/zobexeb/edit?console,output  
 Használat közben a Console és az Output ablak legyen megnyitva, futtatáshoz "Run with JS" gomb.  
 
+## Editor vs konzol
+
+- code editor: szövegszerkesztő
+- konzol: parancssor
+
 ## Függvények, változók, objektumok 9 lépésben
 
 1. Függvények
 	- függvényhívás
 		- `greet()`, `expect()`, `cursor()`, `noCursor()`
-	- argumentumok
+	- argumentumok (bemenő adatok)
 		- szám
 		- string
 		- több argumentum
@@ -33,7 +38,7 @@ Használat közben a Console és az Output ablak legyen megnyitva, futtatáshoz 
 	- `bob.blink(stars)`  
 	`bob.say(bob.color)`  
 7. Függvények visszatérési értékkel
-	- `day()`, `dayName()`, `uppercase(str)`, `random(num, num)`
+	- `day() --> num`, `dayName() --> str`, `uppercase(str) --> str`, `random(num, num) --> num`
 8. A visszatérési érték változóba menthető
 	- `today = "Monday"` vs. `today = dayName()`.  
 9. A visszatérési érték lehet függvényargumentum

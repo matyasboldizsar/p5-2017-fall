@@ -1,4 +1,4 @@
-# Második óra: p5.play alapok
+# Második óra: p5.play alapok (jegyzet)
 
 ## Vonalzó, szögmérő
 
