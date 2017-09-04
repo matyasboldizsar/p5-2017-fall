@@ -3,6 +3,14 @@
 Játszótér: http://jsbin.com/zobexeb/edit?console,output  
 Használat közben a Console és az Output ablak legyen megnyitva, futtatáshoz "Run with JS" gomb.  
 
+## Editor (kódszerkesztő) vs. konzol (parancssor)
+
+Mikor kódot írunk, ezt általában valamilyen code editorban, kódszerkesztőben tesszük. Ez egy speciális szövegszerkesztő, ami kifejezetten programozásra lett kifejlesztve. Amit ide írunk, azt el tudjuk menteni, akárhányszor le tudjuk futtatni, át tudjuk írni, meg tudjuk osztani másokkal stb. Ez gyakorlatban a JSBin oldal JS (JavaScript) fülét fogja jelenteni.   
+A JavaScript nyelvvel azonban kapcsolatba léphetünk egy másik módon is: a konzolon, vagyis parancssoron keresztül. Ilyenkor egymás után, egyenként adjuk ki az utasításokat. A kiadott utasításokat utólag nem tudjuk módosítani, csak megismételni, vagy másikat kiadni helyette. Az utasítások után entert kell nyomnunk, a parancs pedig azonnal lefut, és láthatjuk az eredményét. Az így kiadott pararancsok azonban nem mentődnek el: ha újratöltjük az oldalt, minden kiadott parancsunk semmissé lesz.  
+
+A konzol és a kódszerkesztő viszonya kicsit olyan, mint a szó és az írás. A szóban, egyenként kiadott utasításainkra azonnal választ kapunk, de rögtön utána el is felejtődnek; az írásban adott parancsok megmaradnak, és egyben tudjuk őket végrehajtani.  
+A félév elején a konzolt fogjuk használni, majd ha már megismerkedtünk a programozás alapjaival, áttérünk a kódszerkesztőre.  
+
 ## Függvények, változók, objektumok 9 lépésben
 
 ### 1. Függvények
@@ -60,6 +68,8 @@ Ha nem értéket adni szeretnénk, hanem összehasonlítani két változót, azt
 | +=       | változó megnövelése | `eyes += 1` | `3`      | az `eyes` értéke mostantól 3      |
 | -        | kivonás             | `eyes - 3`  | `0`      | nincs változás, az `eyes` marad 3 |
 | -=       | változó csökkentése | `eyes -= 3` | `0`      | az `eyes` értéke mostantól 0      |
+
+Csillagos megjegyzés: a változók típusa lekérdezhető a `typeof()` függvénnyel, és a változók kitörölhetőek a `delete()` függvénnyel.  
 
 #### 3. Változó mint függvényargumentum
 Azok a függvények, amik argumentumot várnak, konkrét érték helyett elfogadnak változót is: pl. a `nyan(5)` parancs pontosan 5 macskát hoz létre, a `nyan(stars)` parancs viszont pontosan annyit, ahány csillagunk épp van (tehát ami épp a `stars` változó értéke). Ha pedig a kávézó nevét akarjuk felugró ablakban megjeleníteni: `alert(company)`  
