@@ -1,6 +1,6 @@
 # Első óra: a programozás alapfogalmai (vázlat)
 
-Játszótér: http://jsbin.com/zobexeb/edit?console,output  
+Játszótér: http://jsbin.com/visopih/edit?console,output  
 Használat közben a Console és az Output ablak legyen megnyitva, futtatáshoz "Run with JS" gomb.  
 
 ## Editor vs konzol
