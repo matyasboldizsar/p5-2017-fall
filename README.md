@@ -1,8 +1,4 @@
-# p5 jegyzet (MOME 2017 tavaszi félév)
-
-## FIGYELEM
-
-__Ez a jegyzet félkész állapotban van, egyelőre nem mérvadó.__  
+# p5 jegyzet (MOME 2017 őszi félév)
 
 ## Kurzusinfó
 
