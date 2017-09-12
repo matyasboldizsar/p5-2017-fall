@@ -18,7 +18,7 @@ A szemeszter utolsó előtti óráján mindenkinek írnia kell egy képernyőkí
 A programokat a [jsbin.com](http://jsbin.com/) weboldalon írjuk, lehetőleg Chrome böngészőben. Az órai munka az internetre mentődik, így bárhonnan elérhető, bármikor folytatható, bárkivel megosztható. Ehhez előbb regisztrálni kell a [GitHub.com](http://github.com) weboldalon, aztán a jsbin.com oldalon bejelentkezéskor a github opciót választani. Első bejelentkezés után állítsuk be a jsbin-t következőképpen: [Editor settings](etc/jsbin-editor-settings.png), [Preferences](etc/jsbin-preferences.png), [JSHint](etc/jshint.json) (ez utolsót a Preferences fül alatt a JSHint melleti nyílra kattintva lehet beállítani).  
 
 ### Egyebek
-Facebook-csoport: TBD  
+Facebook-csoport: https://www.facebook.com/groups/520134875000562  
 
 ## Speciális karakterek
 
