@@ -19,6 +19,7 @@ A programokat a [jsbin.com](http://jsbin.com/) weboldalon írjuk, lehetőleg Chr
 
 ### Egyebek
 Facebook-csoport: https://www.facebook.com/groups/520134875000562  
+Kurzus weboldala: http://endreymarcell.hu/p5  
 
 ## Speciális karakterek
 
@@ -44,6 +45,7 @@ Facebook-csoport: https://www.facebook.com/groups/520134875000562
 
 #### 3. p5 modell
 - [vázlat](https://github.com/endreymarcell/p5-2017-fall/blob/master/03-p5-model/bullet-points.md)
+- [jegyzet](https://github.com/endreymarcell/p5-2017-fall/blob/master/03-p5-model/notes.md)
 
 #### 4. grafika
 - [vázlat](https://github.com/endreymarcell/p5-2017-fall/blob/master/04-drawing/bullet-points.md)
