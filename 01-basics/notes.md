@@ -1,6 +1,6 @@
 # Első óra: a programozás alapfogalmai (jegyzet)
 
-Játszótér: http://jsbin.com/visopih/edit?console,output  
+Játszótér: http://jsbin.com/wacado/edit?console,output  
 Használat közben a Console és az Output ablak legyen megnyitva, futtatáshoz "Run with JS" gomb.  
 
 ## Editor (kódszerkesztő) vs. konzol (parancssor)
