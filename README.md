@@ -7,8 +7,8 @@ A kurzus célja a [p5.js](p5js.org) alapjainak elsajátítása. A p5.js a [Proce
 
 ### Órák
 Órák helye és időpontja: szerda 8:30-9:50, terem: 413  
-(12 óra lesz szept. 13. és dec. 6. között)  
-Megengedett hiányzások száma: TBD (katalógus lesz)  
+11 óra lesz: szept. 13. és dec. 6. között minden szerda, kivéve okt. 18. és nov. 1.
+Megengedett hiányzások száma: 3 (katalógus lesz)  
 Oktatók: Endrey Marcell, Kovács Eszter és Biró Júlia  
 
 ### Számonkérés
