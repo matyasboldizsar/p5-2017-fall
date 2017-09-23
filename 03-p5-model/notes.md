@@ -33,11 +33,19 @@ Pár további billentyűkombó érdeklődőknek:
 - Cmd + Ctrl + fel/le nyíl --> sor mozgatása fel/le  
 - Cmd + D --> szó kijelölése, ismétlődően  
 
-## JavaScript vs. p5.js
+## JavaScript vs. p5.js (érdekesség)
 
-TBD
+Hogyan viszonyul egymáshoz a Java, a JavaScript, a Processing és a p5.js?  
+
+A Java egy programnyelv, amiben nagyon sokféle programot lehet írni. Ha valaki Javaban programozik, az kicsit olyan, mint ha azt mondanánk, hogy valaki épp spanyolul beszél: elmondja a _hogyant_, de nem mond semmit a _mit_-ről.  
+A JavaScript is egy programnyelv, ami máskor, más helyen, más céllal született, mint a Java. A nevükben hasonlítanak, és néhány szintaktikai szabályon is osztoznak (pl. függényhíváskor zárójeleket kell tenni, a stringeket idézőjelbe kell tenni, a változóknak egyenlőségjellel kell értéket adni stb.), de sok különbség is van - kicsit olyan, mint a spanyol és az olasz nyelv.  
+
+A Processing kicsit úgy viszonyul a Java nyelvhez, mint a _Texas hold 'em_ póker a spanyol nyelvhez. Pókerezés közben is spanyolul beszél az ember, de a szótára kiegészül néhány, speciálisan a pókerre jellemző szóval, pl. Trío, Color, Full.  
+A Processing után a p5.js kicsit olyan, mint spanyol után olaszol pókerezni. A nyelv hasonló, de más, viszont a póker szabályai ugyanazok - aki spanyolul tud pókerezni, az olaszul is tud, legfeljebb pár kifejezést kell megtanulnia, amik nem egyeznek meg (Tris, Colora),  
 
 ## A p5 modell
+
+### Egy egyszerű program animációval és interakcióval
 
 Eddig a parancsainkat egyenként, egymás után, a konzolba begépelve adtuk ki. Minden parancs kiadása után entert nyomtunk, megkaptuk az eredményt, majd kezdhettünk újabb parancsot gépelni. Mostantól a konzol helyett programozásra a kódszerkesztőt fogjuk használni (JS fül). Ide előre begépeljük a parancsokat, amik aztán folyamatosan fognak lefutni, mikor futtatjuk a programot.  
 A p5.js (pontosabban eredetileg a Processing) programok működését úgy lehet jól megérteni, ha a szükséges utasításokat a következő három szakaszba rendezzük: preparáció, animáció, reakció. A preparáció szakaszba kerül minden olyan előkészület, aminek a program indulásakor egyetlen egyszer kell lefutnia; az animáció szakasz ad helyet a program mozgásának és kirajzolásának; a reakció szakaszba pedig az kerül, aminek külső esemény hatására kell bekövetkeznie.  
@@ -72,7 +80,7 @@ function setup() {
 ```
 
 Az animációban az úgynevezett "draw" blokka írjuk az utasításokat:  
-```
+```JavaScript
 // ANIMATION
 
 function draw() {
@@ -81,7 +89,7 @@ function draw() {
 ```
 
 A reakció szakasz pedig - ezúttal - egy "mouseClicked" blokkot fog tartalmazni, mert erre az eseményre szeretnénk reagálni:  
-```
+```JavaScript
 // REACTION
 
 function mouseClicked() {
@@ -89,4 +97,109 @@ function mouseClicked() {
 }
 ```
 
-TODO createSprite, paintCanvas, allSprites.draw
+Ezzel le is írtuk a programunk logikáját. Sajnos van még pár parancs, amivel ki kell egészítenünk a fentieket ahhoz, hogy valóban működő programot kapjunk:  
+1. A setup elején létre kell hoznunk egy vásznat, hogy aztán tudjunk mire rajzolni: `createCanvas(windowWidth, windowHeight)`.  
+2. A draw elején le kell festenünk az egész vásznat fehérre, különben a mozgó sprite csíkot húz maga után: `paintCanvas("white")`.  
+3. A draw végén pedig meg is kell rajzolnunk bobot, különben nem jelenik meg a vásznon: `allSprites.draw()`.  
+
+A fenti három utasítás szinte minden programunkban szerepelni fog.  
+
+A teljes program tehát:  
+
+```JavaScript
+// PREPARATION
+
+function setup() {
+    createCanvas(windowWidth, windowHeight)
+    bob = createSprite(width / 2, 100)
+}
+
+// ANIMATION
+
+function draw() {
+    paintCanvas("white")
+    bob.position.y += 10
+    allSprites.draw()
+}
+
+// REACTION
+
+function mouseClicked() {
+    bob.positon.y = 100
+}
+```
+
+(A dupla perjellel kezdődő sorok csak megjegyzések, "kommentek" a programban, tehát nem szükségesek a program futásához. Azokat csak magunknak írjuk oda a jobb érthetőség végett.)  
+
+### Egeret követő sprite
+
+Következő feladat: rajzoljunk egy sprite-ot, ami folyamatosan követi az egeret, és ha lenyomunk egy billentyűt, változzon egy kicsit szélesebbé, mint amilyen eddig volt.  
+
+Próbáljuk meghatározni ennek a programnak az utasításait szakaszonként. A preparáció során biztosan létre kell hozni egy sprite-ot. A létrehozás helye viszont ezúttal mindegy, hiszen úgyis mindjárt oda fogjuk tenni, ahol az egér van:  
+`bob = createSprite()`  
+
+Az animáció azt fogja takarni, hogy bobot újra és újra oda helyezzük, ahol az egér van. Hogy lehet ezt megoldani? A p5.js speciális változó segítségével, egész pontosan a `mouseX` és a `mouseY` változók használatával, amik minden pillanatban megmondják, hol van éppen az egér:  
+```JavaScript
+bob.position.x = mouseX
+bob.position.y = mouseY
+```
+
+A reakció pedig a szélesség (tehát a sprite `width` változójának) növekedése:  
+`bob.width += 10`  
+
+Ezzel meg is vannak az utasításaink. Helyezzük őket függvényekbe (utasításblokkokba) úgy, hogy ne felejtsük ki az előző programban is látott néhány kötelező utasítást.  
+Preparáció:  
+```JavaScript
+function setup() {
+    createCanvas(windowWidth, windowHeight)
+    bob = createSprite()
+}
+```
+
+Animáció:
+```JavaScript
+function draw() {
+    paintCanvas("white")
+    bob.position.x = mouseX
+    bob.position.y = mouseY
+    allSprites.draw()
+}
+```
+
+A reakció most nem egérkattintásra, hanem billentyűnyomásra történik, ezért a `mouseClicked` helyett most a `keyTyped` nevű blokkba kell írnunk:  
+```JavaScript
+function keyTyped() {
+    bob.width += 10
+}
+```
+
+Tehát a teljes program:  
+```JavaScript
+function setup() {
+    createCanvas(windowWidth, windowHeight)
+    bob = createSprite()
+}
+
+function draw() {
+    paintCanvas("white")
+    bob.position.x = mouseX
+    bob.position.y = mouseY
+    allSprites.draw()
+}
+
+function keyTyped() {
+    bob.width += 10
+}
+```
+
+#### Kísérletek
+
+Mi történik, ha a draw-ban felcseréled a `mouseX`-et és a `mouseY-`t? Mi történik, ha `mouseX` helyett `width - mouseX`-et, `mouseX * 2`-t, `mouseX / 2`-t írsz?  
+
+## Feladatok
+
+1. Írj egy programot, amiben egy sprite folyamatosan forog (ehhez a sprite `rotation` változóját tudod használni), és egérkattintásra egy kicsit jobbrább megy, mint ahol épp van.  
+2. Írj egy programot, amiben egy sprite folyamatosan növekszik, billentyűnyomásra pedig egy véletlen helyre ugrik a vásznon (`random()` függvény), és visszanyeri az eredeti, 100*100-as méretét.  
+3. Írj egy programot, amiben egy sprite minden billentyűnyomásra kicsit jobbra fordul, és minden kattintásra oda ugrik a vásznon, ahol épp az egér van.  
+4. Írj egy programot, amiben létrejön egy sprite a vászon közepén, aminek az aktuális méretét (szélességét és magasságát) mindig az egér aktuális x koordinátájára állítod, az aktuális fordulatát pedig az egér y koordinátájára.  
+5. Írj egy programot, amiben egy sprite minden pillanatban véletlenszerű helyre ugrik, de most kivételesen ne fesd fehérre a vásznat az animáció egyes lefutásai között. Ha ez megvan, írd meg, hogy kattintásra fehérre színeződjön a vászon.  
