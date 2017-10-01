@@ -206,3 +206,7 @@ Kezdő bin: [előkészített sablon](https://gist.jsbin.com/endreymarcell/0da8cf
 3. Írj egy programot, amiben egy sprite minden billentyűnyomásra kicsit jobbra fordul, és minden kattintásra oda ugrik a vásznon, ahol épp az egér van.  
 4. Írj egy programot, amiben létrejön egy sprite a vászon közepén, aminek az aktuális méretét (szélességét és magasságát) mindig az egér aktuális x koordinátájára állítod, az aktuális fordulatát pedig az egér y koordinátájára.  
 5. Írj egy programot, amiben egy sprite minden pillanatban véletlenszerű helyre ugrik, de most kivételesen ne fesd fehérre a vásznat az animáció egyes lefutásai között. Ha ez megvan, írd meg, hogy kattintásra fehérre színeződjön a vászon.  
+
+## Házi feladat
+
+Reprodukálj egy híres festményt [ebben a végtelenül primitív rajzoló programban](http://jsbin.com/furevox). Rajzolás közben figyeld meg a vászon alján megjelenő parancsokat.  
