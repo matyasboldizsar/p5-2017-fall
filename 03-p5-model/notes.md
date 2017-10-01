@@ -87,11 +87,11 @@ function draw() {
 }
 ```
 
-A reakció szakasz pedig - ezúttal - egy "mouseClicked" blokkot fog tartalmazni, mert erre az eseményre szeretnénk reagálni:  
+A reakció szakasz pedig - ezúttal - egy "mousePressed" blokkot fog tartalmazni, mert erre az eseményre szeretnénk reagálni:  
 ```JavaScript
 // REACTION
 
-function mouseClicked() {
+function mousePressed() {
 	bob.positon.y = 100
 }
 ```
@@ -123,7 +123,7 @@ function draw() {
 
 // REACTION
 
-function mouseClicked() {
+function mousePressed() {
     bob.positon.y = 100
 }
 ```
@@ -167,9 +167,9 @@ function draw() {
 }
 ```
 
-A reakció most nem egérkattintásra, hanem billentyűnyomásra történik, ezért a `mouseClicked` helyett most a `keyTyped` nevű blokkba kell írnunk:  
+A reakció most nem egérkattintásra, hanem billentyűnyomásra történik, ezért a `mousePressed` helyett most a `keyPressed` nevű blokkba kell írnunk:  
 ```JavaScript
-function keyTyped() {
+function keyPressed() {
     bob.width += 10
 }
 ```
@@ -188,7 +188,7 @@ function draw() {
     allSprites.draw()
 }
 
-function keyTyped() {
+function keyPressed() {
     bob.width += 10
 }
 ```
