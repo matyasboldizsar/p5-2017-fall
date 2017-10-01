@@ -23,7 +23,7 @@ A fent linkelt, vonalzós-szögmérős program futás közben jól láthatóan h
 
 ## Sprite-ok (szereplők)
 
-Játszótér: http://jsbin.com/kadugev/edit?console,output  
+Játszótér: http://jsbin.com/xuhufaq/edit?console,output  
 
 A p5 (pontosabban annak kiegészítője, a p5.play) programozás során úgynevezett _sprite_-okat, mondhatni "szereplőket" fogunk létrehozni és irányítani.  
 Sprite-ot a következő paranccsal csinálunk: `bob = createSprite()`  
@@ -69,7 +69,11 @@ Ez a parancs kiírja, épp merre áll bob; ez alapértelmezésben 0.
 bob forgását be tudják állítani egy-egy konkrét értékre, például:  
 `bob.rotation = 10`  
 
-Illetve módosítani tudjuk a jelenlegi értékéhez képest:  
+Itt segítenek az égtáj-változók: ha szeretnénk bobot balra fordítani, de nem emlékszünk, ahhoz pontosan melyik szám tartozik, mondhatunk csak annyit, hogy  
+`bob.rotation = WEST`  
+és bob nyugat felé fordul.  
+
+Bob irányát nem csak konkrét számokra tudjuk állítani, hanem a jelenlegi értékhez képest is tudunk rajta módosítani, tehát kicsit elforgatni:  
 `bob.rotation += 10`  
 `bob.rotation -= 5`  
 
@@ -83,7 +87,7 @@ bob helyét is állíthatjuk véletlenre. Itt az alsó határ 0, a felső pedig 
 
 Megjegyzés: a globálisan létező `width` nem keverendő össze a sprite saját `width` változójával (`bob.width`). Az előbbi úgynevezett read-only változó, a vásznunk méretét tudjuk meg belőle, de nem módosítjuk. Az utóbbi a sprite szélessége, ami alapértelmezésben 100 pixel, de nyugodtan átállíthatjuk tetszésünk szerint. Ugyanez igaz a `height`, illetve `bob.height` változókra.  
 
-### Sprite létrehozása konkrét helyen, konkrét méretben
+### Csillagos: Sprite létrehozása konkrét helyen, konkrét méretben
 
 A `createSprite()` függvény hatására a sprite automatikusan a vászon bal felső sarkában, 100\*100-as méretben jön létre. Valójában azonban ezeket az adatokat meg tudjuk határozni lérehozáskor: ha átadunk a `createSprite()` parancsnak négy számot, abból az elsőt a sprite x koordinátájaként, a másodikat y-ként, a harmadikat szélességként, a negyediket magasságként fogja értelmezni.  
 Csináljunk mondjuk egy sprite-ot a vászon (300, 50) pontjában, 20*20-as méretben:  
@@ -95,6 +99,7 @@ Megjegyzés: attól, hogy egy sprite-ot létrejöttekor elnevezünk, az a név n
 `bob = createSprite(300, 50, 20, 20)`  
 `bob = createSprite(width / 2, height / 2, 500, 10)`  
 A második parancs kiadása után a `bob` előtag már a második, 500*10-es sprite neve lesz, az elsőt pedig már nem fogjuk tudni iránytani. Ezért figyeljünk arra, hogy ha több szereplőt hozunk létre, mindig különböző nevet adjunk nekik.  
+### Megjegyzés a stílusról
 
 Megjegyzés: kicsit fentebb ezzel a paranccsal hoztuk létre a charlie nevű sprite-ot:  
 `charlie = createSprite(width / 2, height / 2, 500, 10)`  

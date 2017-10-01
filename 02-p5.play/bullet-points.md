@@ -9,14 +9,14 @@
 		* egy pont helye: (x, y)
 	+ szögek
 		* 0-360
-		* a Kelet a nulla, és órairányba forog
+		* a Kelet a nulla, a Dél a 90, Nyugat 180, Észak 270
 	+ gyakorlás: http://jsbin.com/medolor/
 - p5 változók
 	- vászon mérete: `width`, `height`
 	- négy fő irány: `NORTH`, `EAST`, `SOUTH`, `WEST`
 	- egér helye: `mouseX`, `mouseY`
 - sprite-ok
-	+ játszótér: http://jsbin.com/kadugev/edit?console,output  
+	+ játszótér: http://jsbin.com/xuhufaq/edit?console,output  
 	- létrehozás: `bob = createSprite()`
 	- szín: `bob.shapeColor = "darkblue"`
 	- törlés: `bob.remove()`
