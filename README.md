@@ -23,6 +23,18 @@ Kurzus weboldala: http://endreymarcell.hu/p5
 
 ## Speciális karakterek
 
+### Laptop
+
+| Karakter | kód              | Karakter | kód            |
+|----------|------------------|----------|----------------|
+| [        | AltGr + F        | ]        | AltGr + G      |
+| {        | AltGr + B        | }        | AltGr + N      |
+| <        | AltGr + í vagy m | >        | AltGr + y      |
+| &        | AltGr + C        | \|       | AltGr + w      |
+| *        | AltGr + -        | ;        | AltGr + ,      |
+
+### Macbook
+
 | Karakter | kód             | Karakter | kód             |
 |----------|-----------------|----------|-----------------|
 | [        | alt + 8         | ]        | alt + 9         |

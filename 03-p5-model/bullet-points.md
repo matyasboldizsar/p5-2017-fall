@@ -10,6 +10,7 @@
 	+ fájlkezelés
 		* új bin
 		* autosave
+		* név vs. leírás
 		* megnyitás
 		* megosztás
 		* klónozás
@@ -19,6 +20,7 @@
 	+ hibaüzenetek
 	+ kommentek
 	+ autoformat
+	+ [speciális karakterek](https://github.com/endreymarcell/p5-2017-fall#speciális-karakterek)
 - js vs. p5.js
 - p5 model: preparáció, animáció, reakció (példa: sprite létrejön, megy jobbra, kattintásra visszaugrik)
 - preparáció: setup
