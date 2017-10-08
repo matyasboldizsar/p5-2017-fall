@@ -1,4 +1,4 @@
-# 4. grafika
+# # Negyedik óra: grafika (vázlat)
 - elmélet: vászon és festés
 - teljes vászon
 	+ createCanvas, paintCanvas
