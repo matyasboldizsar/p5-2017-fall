@@ -42,7 +42,7 @@ A Processing után a p5.js kicsit olyan, mint spanyol után olaszol pókerezni. 
 
 ### Egy egyszerű program animációval és interakcióval
 
-A programot ebbe a binbe kell írni: [üres sablon](https://gist.jsbin.com/endreymarcell/c90e664d412101d4b568954a9aaa7b8e)
+[Sablon a programhoz](http://jsbin.com/tukezeg/edit?js,output) (a link megnyitása után klónozd le)
 
 Eddig a parancsainkat egyenként, egymás után, a konzolba begépelve adtuk ki. Minden parancs kiadása után entert nyomtunk, megkaptuk az eredményt, majd kezdhettünk újabb parancsot gépelni. Mostantól a konzol helyett programozásra a kódszerkesztőt fogjuk használni (JS fül). Ide előre begépeljük a parancsokat, amik aztán folyamatosan fognak lefutni, mikor futtatjuk a programot.  
 
@@ -132,7 +132,7 @@ function mousePressed() {
 
 ### Egeret követő sprite
 
-A programot ide kell írni: [előkészített sablon](https://gist.jsbin.com/endreymarcell/0da8cf80b5fb9ba52dfba116cfa210bf)
+[Sablon a programhoz](http://jsbin.com/gevosoh/edit?js,output) (a link megnyitása után klónozd le és adj neki leírást)
 
 Következő feladat: rajzoljunk egy sprite-ot, ami folyamatosan követi az egeret, és ha lenyomunk egy billentyűt, változzon egy kicsit szélesebbé, mint amilyen eddig volt.  
 
@@ -199,7 +199,7 @@ Mi történik, ha a draw-ban felcseréled a `mouseX`-et és a `mouseY-`t? Mi tö
 
 ## Feladatok
 
-Kezdő bin: [előkészített sablon](https://gist.jsbin.com/endreymarcell/0da8cf80b5fb9ba52dfba116cfa210bf)
+[Sablon a programhoz](http://jsbin.com/gevosoh/edit?js,output) (a link megnyitása után klónozd le és adj neki leírást)
 
 1. Írj egy programot, amiben egy sprite folyamatosan forog (ehhez a sprite `rotation` változóját tudod használni), és egérkattintásra egy kicsit jobbrább megy, mint ahol épp van.  
 2. Írj egy programot, amiben egy sprite folyamatosan növekszik, billentyűnyomásra pedig egy véletlen helyre ugrik a vásznon (`random()` függvény), és visszanyeri az eredeti, 100*100-as méretét.  
