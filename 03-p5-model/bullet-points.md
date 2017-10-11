@@ -22,14 +22,14 @@
 	+ autoformat
 	+ [speciális karakterek](https://github.com/endreymarcell/p5-2017-fall#speciális-karakterek)
 - js vs. p5.js
-- p5 model: preparáció, animáció, reakció (példa: sprite létrejön, megy jobbra, kattintásra visszaugrik) ([üres sablon](https://gist.jsbin.com/endreymarcell/c90e664d412101d4b568954a9aaa7b8e))
+- p5 model: preparáció, animáció, reakció (példa: sprite létrejön, megy jobbra, kattintásra visszaugrik) ([Sablon a programhoz](http://jsbin.com/tukezeg/edit?js,output) a link megnyitása után klónozd le)
 - preparáció: setup
 	- createCanvas, createSprite
 - animáció: draw
 	- mint a film pörgő kockái
 	- paintCanvas, x += 10, allSprites.draw
 - reakció: mouseClicked
-- további példák ([előkészített sablon](https://gist.jsbin.com/endreymarcell/0da8cf80b5fb9ba52dfba116cfa210bf))
+- további példák ([Sablon a programhoz](http://jsbin.com/gevosoh/edit?js,output) a link megnyitása után klónozd le és adj neki leírást)
 	- egeret követő sprite
 	- kattintásra létrejövő sprite
 - feladatok
