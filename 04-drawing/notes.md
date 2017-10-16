@@ -98,7 +98,7 @@ text("redrum", 300, 200)
 ```
 ahol a stringet követő két szám a szöveg bal felső sarkának x és y koordinátája.  
 Ha a szöveget középre szeretnénk igazítani, pl. mert a vászon közepére szeretnénk írni:  
-```
+```JavaScript
 textAlign("center")
 text("Stuck in the middle with you", width / 2, height / 2)
 ```
