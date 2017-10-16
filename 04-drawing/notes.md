@@ -123,7 +123,7 @@ text("another brick in the wall")
 ```
 
 #### Feladatok
-6. Írd a smiley fölé, hogy "Legalább annyira szeretem a korai kelést, mint", és alá hogy "a sós kólát", vagy amit jónak találsz.  
+6. Írd a smiley fölé, hogy "Szeretem a korai kelést, mint", és alá hogy "a sós kólát", vagy amit jónak találsz.  
 7. @ Írd a képernyőre nagy-nagy sárga betűkkel, hogy "CHEESE", aztán fehér körökkel "lukaszd ki" itt-ott, mintha ementáli lenne.  
 
 ## Mozgó rajzok
