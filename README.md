@@ -61,6 +61,7 @@ Kurzus weboldala: http://endreymarcell.hu/p5
 
 #### 4. grafika
 - [vázlat](https://github.com/endreymarcell/p5-2017-fall/blob/master/04-drawing/bullet-points.md)
+- [jegyzet](https://github.com/endreymarcell/p5-2017-fall/blob/master/04-drawing/notes.md)
 
 #### 5. színek, képek
 - [vázlat](https://github.com/endreymarcell/p5-2017-fall/blob/master/05-colors-images/bullet-points.md)
