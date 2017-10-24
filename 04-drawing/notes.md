@@ -1,5 +1,8 @@
 # Negyedik óra: grafika (jegyzet)
 
+Paint: http://endreymarcell.hu/p5v3/paint.html  
+Bin klónozásra: http://jsbin.com/jexorej/edit?js,output  
+
 ## Statikus rajzok
 
 ### Elmélet: festék és vászon
