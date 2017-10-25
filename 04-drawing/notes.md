@@ -1,7 +1,7 @@
 # Negyedik óra: grafika (jegyzet)
 
 Paint: http://endreymarcell.hu/p5v3/paint.html  
-Bin klónozásra: http://jsbin.com/jexorej/edit?js,output  
+Bin klónozásra: http://jsbin.com/niqanin/edit?js,output  
 
 ## Statikus rajzok
 
