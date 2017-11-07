@@ -225,15 +225,15 @@ function draw() {
 }
 ```
 
-##### Feladatok
+#### Feladatok
 
 8. Rajzolj egy kört, aminek a középpontja a vászon bal felső sarka, és folyamatosan növekszik. Ha ez megvan, rajzolj egy függőleges vonalat, ami a vászon bal széléről indul, és folyamatosan jobbra halad, úgy, hogy közben végig érinti a kör szélét.  
 (Ha jut időd, írd meg a vízszintes párját is, ami a vászon felső széléről halad lefelé, és adj színt a körnek.)  
 9. @ JavaScriptben a % jel modulo-t, tehát a maradékos osztás maradékát jelenti. Például 12 % 10 == 2, sőt, 178 % 10 == 8. Ez arra is jó, hogy ha valami kiment a képernyő jobb szélén, az újra megjelenjen a bal szélen - egyszerűen el kell modulózni a túl nagyra nőtt x koordinátát a vászon szélességével (`x % width`) -, illetve ugyanez igaz az alsó szélre (`y % height`). - Nos, én eleve olyan programot akartam írni, ami azt rajzolja, hogy `line(num, num * 3 % height, num + 100, num * 3 % height)`, de végül oda jutottam, hogy `line(num, num * 5 % height, num * 1.5 + 100, 0)`, és ez egész jól néz ki. Kísérletezz még kicsit ezzel, játssz bármit a vonal pontjainak koordinátáival, rajzolj valami szépet és mutasd meg.  
 
-#### Példák egérrel
+### Példák egérrel
 
-##### Egeret követő szöveg
+#### Egeret követő szöveg
 
 Itt egy statikus szöveg:  
 `text("Ne kövess!", 300, 100)`
@@ -250,7 +250,7 @@ function draw() {
 }
 ```
 
-##### Egér szerinti vastagság
+#### Egér szerinti vastagság
 
 ![Fat smiley](fat-smiley.png)  
 
@@ -284,14 +284,47 @@ function draw() {
 }
 ```
 
-##### Feladatok
+#### Közbevetés
 
-10. Írd át az előző programot úgy, hogy a kör mérete, illetve a vonalak helye ne egy folyamatosan változó legyen, hanem az egérhez igazodjon - a `num` változó értéke ne növekedjen, hanem mindig az egér és a bal felső sarok távolsága legyen. Ehhez használd a `dist()` függvényt, ami négy számot vár - két pont koordinátáit - és megadja a köztük lévő távolságot.  
+Mi a különbség a lenti két program között?  
+
+```JavaScript
+function setup() {
+    createCanvas(windowWidth, windowHeight)
+    paintCanvas("white")
+}
+
+function draw() {
+    circle(mouseX, mouseY, 100)
+}
+```
+
+illetve:
+```JavaScript
+function setup() {
+    createCanvas(windowWidth, windowHeight)
+}
+
+function draw() {
+    paintCanvas("white")
+    circle(mouseX, mouseY, 100)
+}
+```
+
+#### Feladatok
+
+10. Írd át a 8-as programot úgy, hogy a kör mérete, illetve a vonalak helye ne egy folyamatosan változó legyen, hanem az egérhez igazodjon - a `num` változó értéke ne növekedjen, hanem mindig az egér és a bal felső sarok távolsága legyen. Ehhez használd a `dist()` függvényt, ami négy számot vár - két pont koordinátáit - és megadja a köztük lévő távolságot.  
 11. @ Rajzolj Bezier-görbét, aminek a kezdőpontja a vászon tetején, középen van, a végpontja a vászon alján középen, és mindkét fókuszpontja az egér aktuális helye. A `bezier()` függvény nyolc számot vár: a kezdőpont két koordinátáját, az első fókuszpontét, a második fókuszpontét és a második végpontét.  
+12. @ Írj egy programot, amiben mindig van egy 5px vastag, piros pont ott, ahol az egeret tartod. (A vásznat ne töröld le, hogy a pont vonalat is tudjon húzni.) Ha ez megvan, írd meg, hogy a piros pontnak legyen egy kék tükörképe, ami vízszintesen tükrözve van a vászont elfelező, függőleges y tengelyre; egy zöld tükörképe, ami függőlegesen van tükrözve a vászont elfelező, vízszintes x tengelyre; és egy narancs tükörképe, ami mindkét tengelyre tükrözve van ([példa itt](mirroring.png)).
 
-#### Példák randommal
+#### Mozgás és egér egyszerre
 
-##### Véletlen vonalak
+12. Írj egy programot, amiben egy öt képpont vastag pont elindul a képernyő bal szélén középen (tehát függőlegesen középre igazítva), és folyamatosan halad jobbra. Ha ez megvan, írd át úgy, hogy a magasságban ne középre legyen igazítva, hanem mindig az egér aktuális magasságát kövesse.  
+13. @ A `max()` egy olyan függvény, ami számokat vár, és visszaadja közülük a legnagyobbat. Pl. `max(10, 20) == 20`, `max(60, 4, 78, -1, -4, 55) == 78`. Írj egy olyan programot, amiben egy vízszintes vonal elindul a vászon tetejéről, és folyamatosan halad lefelé. Aztán adj hozzá egy 30px átmérőjű kört, ami mindig ott van, ahol az egér - de nem tud lejjebb menni a vonal aktuális mélységénél. (Mikor megadod a kör helyét, a `max()` függvénnyel határozd meg, hogy az egér függőleges helyzete, vagy a vonal aktuális mélysége a nagyobb.) Figyelj rá, hogy ne a kör közepe, hanem a széle igazodjon a vonalhoz.  
+
+### Példák randommal
+
+#### Véletlen vonalak
 
 ![Random lines](random-lines.png)  
 
@@ -316,7 +349,7 @@ function draw() {
 }
 ```
 
-##### Véletlen vonalak mozgó pontból
+#### Véletlen vonalak mozgó pontból
 
 ![Growing lines](growing-lines.png)  
 
@@ -343,12 +376,12 @@ Legyen a vonal szélessége véletlenszerű:
 Még jobb: a véletlen vonal kezdetben legyen nagyon rövid, és lefelé haladva egyre szélesebb - ehhez használjuk a `random()` felső határának a már amúgy is létező változónkat:  
 `line(0, num, random(0, num), num)`  
 
-##### Feladatok
+#### Feladatok
 
-12. Lófasz
-13. @ Még több lófasz
+12. Ha szeretnél kapni egy véletlenszámot, ami a 100-nak a +/- 20-as körzetében van, a 100-hoz hozzá tudsz adni egy véletlenszámot, ami -20 és 20 között változik: `100 + random(-20, 20)`. Írj egy programot, amiben az egér 30 pixeles körzetében húzol minden pillanatban véletlen vonalakat! ([Példa itt](random-around-mouse.png))  
+13. @ A `mouseX` és a `mouseY` mellett van két hasonló változó, a `pmouseX` és `pmouseY`, amik az egér előző pillanatbeli (previous) helyét adják meg. Írj egy programot, amiben minden pillanatban egy feketével kitöltött kört rajzolsz az egér helyére, aminek az átmérője annyi, amennyi az egér jelenlegi és előző pozíciójának távolsága! (Ennek kiszámolására a `dist()` függvényt használhatod, ami négy számot vár: az első és a második pont két-két koordinátáját.) Ha ez megvan, írd hozzá, hogy minden pillanatban létrejöjjön egy kitöltés nélküli, de 10px vastag, fehér keretű négyzet (`square()` függvény, ami egy x koordinátát, egy y koordinátát és egy méretet vár) a vásznon véletlen helyen, 20px és 100px közötti véletlen méretben.  
 
-#### Példák egérkattintással
+### Példák egérkattintással
 
 ![Congrats](congrats.png)  
 
@@ -364,14 +397,14 @@ function mouseClicked() {
 }
 ```
 
-##### Feladatok
+#### Feladatok
 
-14. Lócsöcs
-15. @ Még több lócsöcs
+14. Egészítsd ki az előző programot úgy, hogy kattintásra letörlődjön a vászon!
+15. @ Írj egy programot, amiben van két változó, x és y, és folyamatosan (a vászon törlése nélkül) vonalak húzódnak ebből a pontból a vászon véletlen pontjaiba, illetve ezen középpont körül véletlen méretű (1000px és 0 közötti átmérőjű), átlátszó belsejű körök rajzolódnak. A két változó értéke kezdetben a vászon közepe legyen, de kattintásra törlődjön le a vászon, és a változók állítódjanak át az egér aktuális helyére. Ha ez megvan, azt is hozzáírhatod, hogy a vonalak és a kör keretének vastagsága 1-ról induljon, de folyamatosan nőjön, és kattintásra nullázódjon újra - ehhez egy újabb változót kell csinálnod, melyet 1-ről indítasz, és a `draw()`-ban mindig megnövelsz (de elég kb. egy századdal, különben nagyon hamar nagyon vastag lesz.)  
 
-### Izgalmas példák
+### Haladó példák
 
-#### Véletlenszámok elmentése
+#### Elmélet: véletlenszámok elmentése
 
 Rajzoljunk minden pillanatban egy vízszintes vonalat a vászon bal szélétől a jobb széléig, véletlen magasságban!  
 `line(0, random(0, height), width, random(0, height))`  
@@ -381,7 +414,7 @@ num = random(0, height)
 line(0, num, width, num)
 ```
 
-#### Csini
+#### Csini izé
 
 Rajzoljunk ilyen csini izét:  
 ![Pretty](pretty.png)  
@@ -408,45 +441,53 @@ Ehhez a szöghöz egy 250 képpont sugarú kör kerületén az a pont tartozik, 
 
 Mélyvíz, csak úszóknak.  
 
+Elmélet: interpolálás. Ha el akarok jutni A pontból B pontba 10 lépésben, akkor az egyes lépésekhez tartozó jelenlegi helyet úgy kapom meg, hogy A és B pontot lineárisan interpolálom, figyelembe véve azt, hogy épp hányadik lépésnél tartok. Az első lépés előtt semennyi A nem kell, és az összes B kell. Az első lépés után - mivel tíz lépés lesz összesen - egy tízednyi A kell és kilenc tízednyi B. Minden egyes lépéshez az aktuális hely: `currentPosition = currentStep / 10 * A + (totalSteps - currentStep) / 10 * B`. Azért, hogy ne kelljen ezt mindig leírni, használhatjuk a `map()` függvényt, ami öt számot vár: azt, hogy épp hányadik lépésnél tartunk; azt, hogy hányadik lépéstől indulunk (ez mindig 0); azt, hogy hány lépés lesz összesen; és a két számot, ami között haladunk. Tehát ha a 36/80. lépésnél tartunk A-ból B-be, akkor az aktuális helyünk `currentPosition = map(46, 0, 80, A, B)`.  
+
+Mivel 'pont' típus nincs, a műveletet valójában külön-külön kell majd elvégeznem a két koordinátára:
+```JavaScript
+currentX = map(46, 0, 80, fromX, toX)
+currentY = map(46, 0, 80, fromY, toY)
+```
+
+Mindezek ismeretében itt egy program, amiben egy pont végighalad egy vonalon. A pontot (amit a láthatóság kedvéért vastagabban rajzolok, mint a vonalat) minden pillanatban interpolálom a két pont között, száz lépésen keresztül.  
 ```JavaScript
 function setup() {
     createCanvas(windowWidth, windowHeight)
     paintCanvas("white")
-    num = 0
-    maxi = 250
+
+    // a vonal közdőpontja
+    x1 = 300
+    y1 = 800
+
+    // a vonal végpontja
+    x2 = width / 2
+    y2 = 150
+
+    currentStep = 0
+    totalSteps = 100
 }
 
 function draw() {
-    ax1 = width / 2 - 200
-    ay1 = height / 2 + 200
-    ax2 = width / 2 + 200
-    ay2 = height / 2 + 200
-    ax3 = width / 2
-    ay3 = height / 2 - 160
-    triangle(ax1, ay1, ax2, ay2, ax3, ay3)
+    strokeWeight(1)
+    line(x1, y1, x2, y2)
 
-    bx1 = interpolate(...)
-    by1 = interpolate(...)
-    bx2 = interpolate(...)
-    by2 = interpolate(...)
-    bx3 = interpolate(...)
-    by3 = interpolate(...)
-    triangle(bx1, by1, bx2, by2, bx3, by3)
-
-    cx1 = interpolate(...)
-    cy1 = interpolate(...)
-    cx2 = interpolate(...)
-    cy2 = interpolate(...)
-    cx3 = interpolate(...)
-    cy3 = interpolate(...)
-    triangle(cx1, cy1, cx2, cy2, cx3, cy3)
-
-    num = (num + 1) % maxi
-}
-
-function interpolate(from, to, at) {
-    return from * at + to * (1 - at)
+    strokeWeight(5)
+    currentX = map(currentStep, 0, totalSteps, x1, x2)
+    currentY = map(currentStep, 0, totalSteps, y1, y2)
+    point(currentX, currentY)
+    
+    currentStep += 1
 }
 ```
 
-##### 
+A program szépséghibája, hogy ahogy a `currentStep` eléri, majd túllépi a százat, a pont lemegy a vonalról. Ha ezt nem szeretnénk, vehetjük mindig a 100-as, pontosabban `totalSteps`-es moduloját:  
+```JavaScript
+currentStep += 1
+currentStep %= totalSteps
+```
+Ekkor a pontok újra fognak indulni a vonalon.  
+
+Az, hogy a `totalSteps` változót mennyire állítjuk, azt befolyásolja, hogy milyen gyorsan haladunk végig a vonalon. Lassabb haladáshoz állítsunk be nagyobb lépésszámot.  
+
+A fentiek alapján már meg lehet írni a háromszögben forgó háromszöget. Először is kell három fix pont (hat koordináta), amik a külső háromszög csúcsait írják le. Ezekből pedig ki kell számolni a belső háromszög három csúcsának hat koordinátáját, úgy, hogy a külső háromszög csúcsainak koordinátáit interpolálod.  
+Ha mindent kiszámoltál, jöhetnek a háromszögek (van `triangle()` függvény, hat számot vár.)  
