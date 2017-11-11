@@ -40,9 +40,9 @@ function stopSound(sound) {
   sound.stop()
 }
 
-function paintCanvas(c) {
+function paintCanvas(a, b, c, d) {
   // suppress console output
-  var _ = background(c)
+  var _ = background(a, b, c, d)
 }
 
 function pick(arr) {
